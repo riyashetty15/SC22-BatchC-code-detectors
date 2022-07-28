@@ -54,5 +54,5 @@
 {"cell_type":"markdown","id":"f567e5","input":"**TODO: Can you print the last five rows of the Island and Region columns?** \n\n","pos":24,"type":"cell"}
 {"cell_type":"raw","id":"ab6f68","input":"What do these columns mean?\n\nFull clutch = 2 eggs\n\nDate egg = 1 egg\n\nCulmen = dorsal ridge of beak\n\nDelta 15 N = ratio of stable isotopes 15N:14N\n\nDelta 13 C = ratio of stable isotopes 13C:12C","pos":12,"type":"cell"}
 {"cell_type":"raw","id":"ef821d","input":"Write up some descriptions for your findings here....\n\nAdelie penguins have the shortest flipper and culmen lengths. Chinstrap penguins have similar flipper size compared to the Adelie but longer culmens. Gentoo penguins have the longest for both categories\n\nPenguins with long flippers also have long culmen\nThe length of every culmen varies between 32 and 60 mm, all flippers are between 172 and 231 mm\n\nThe length of flippers that is the most common is between 190 and 195 mm\n\nThe most common culmen lengths are between 35 to 40 mm and 47 to 52 mm\n\nthe penguins are mostly around 3.6 kg (3500 to 3750 g)\n\nAdelie penguins are found on the Torgerson island, Chinstrap on Dream, and Gentoo on Biscoe (All of these are in the Anvers region)","pos":53,"type":"cell"}
-{"id":0,"time":1658415103152,"type":"user"}
-{"last_load":1658755943914,"type":"file"}
+{"id":0,"time":1658845959575,"type":"user"}
+{"last_load":1658845131331,"type":"file"}

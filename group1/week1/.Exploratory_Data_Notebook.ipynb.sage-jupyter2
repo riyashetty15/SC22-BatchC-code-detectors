@@ -70,5 +70,5 @@
 {"cell_type":"markdown","id":"e334bd","input":"One of my favorite ways to investigate a dataframe is by using highlighting. <br> Here is a quick example of how to highlight based on how the value compares to the average. <br>\nThese functions are a bit confusing because they are meant to be used by the pandas Apply function. <br> Read more here: https://www.datacamp.com/community/tutorials/pandas-apply <br> It is a way to check each row and do 'something' based on some values.","pos":55,"type":"cell"}
 {"cell_type":"markdown","id":"e4f9ae","input":"First things first, now that we have completed our calculations we will turn the index into a named column for ease of graphing and we need to include state code if we want to graph on a map.\n","pos":62,"type":"cell"}
 {"cell_type":"markdown","id":"fde0ef","input":"Now we check and see there are no more null values!\n\n","pos":29,"type":"cell"}
-{"id":0,"time":1658425749209,"type":"user"}
-{"last_load":1658432405012,"type":"file"}
+{"id":0,"time":1658846014132,"type":"user"}
+{"last_load":1658846014087,"type":"file"}
