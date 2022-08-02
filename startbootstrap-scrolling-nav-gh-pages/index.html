@@ -9,7 +9,26 @@
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <style>
+          .correlation{
+    width: 120%; 
+    height: 120%; 
+    object-fit: contain;
+}
+          .other{
+    width: 50%; 
+    height: 30%; 
+    object-fit: contain;
+}
+          .r2{
+    width: 80%; 
+    height: 30%; 
+    object-fit: contain;
+}
+          
+        </style> 
     </head>
+  
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
@@ -20,7 +39,10 @@
                     <ul class="navbar-nav ms-auto">
                          <li class="nav-item"><a class="nav-link" href="#about">About this page</a></li>
                         <li class="nav-item"><a class="nav-link" href="#exploration">Exploration</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#correlation">Correlation 
+                          Plot</a></li>
                         <li class="nav-item"><a class="nav-link" href="#machinelearning">Machine Learning</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#metrics">Evaluation Metrics</a></li>
                       <li class="nav-item"><a class="nav-link" href="#conclusion">Conclusion</a></li>
                       <li class="nav-item"><a class="nav-link" 
 href="#team">Meet the Team</a></li>
@@ -42,11 +64,15 @@ href="#team">Meet the Team</a></li>
                 <div class="row gx-4 justify-content-center">
                     <div class="col-lg-8">
                         <h2>About our Project</h2>
-                        <p class="lead">Enter text</p>
+                        <p class="lead">Motivation </p>
+                        <ul>
+                           
+                      </ul>
                         <p class="lead">Characteristics of the Data</p>
                         <ul>
                             <li>The state and federal prisoner populations were published by the National Prisoners Statistics Program under the Bureau of Justice Statistics</li>
                             <li>The state crime and populations statistics were published by the FBI Uniform Crime Reporting Program</li>
+                            <li></li>
                         </ul>
                     </div>
                 </div>
@@ -58,22 +84,116 @@ href="#team">Meet the Team</a></li>
                 <div class="row gx-4 justify-content-center">
                     <div class="col-lg-8">
                         <h2>Exploration of the Data</h2>
-                        <p class="lead">Enter text</p>
-                      <a class="btn btn-lg btn-light bg-gradient" style="background-color:white; border-color:black" href="includes_jails.html">Graph</a>
-                      <a class="btn btn-lg btn-light" style="background-color:white; border-color:black" href="manslaughterperstate.html">Graph2</a>
-                      <a class="btn btn-lg btn-light" style="background-color:white; border-color:black" href="prisonerperstate.html">Graph3</a>
-                      <a class="btn btn-lg btn-light" style="background-color:white; border-color:black" href="burglaryperstate.html">Graph4</a>
+                        <p class="lead">Let's look at some visualizations:</p>
+                      <p>
+                         This bar plot is done using plotly and shows different crimes in each state/jurisdiction and whether it includes jail or not
+                      </p>
+                      <a class="btn btn-lg btn-light bg-gradient" style="background-color:white; border-color:black" href="includes_jails.html">Includes Jail or not</a><br><br>
+                      <p>
+                        This bar plot is done using plotly and shows the amount of murder-manslaughter cases per state/jurisdiction
+                      </p>
+                      <a class="btn btn-lg btn-light" style="background-color:white; border-color:black" href="manslaughterperstate.html">Murder-Manslaughter</a><br><br>
+                      <p>
+                        This line graph is done using plotly and illustrates the amount of prisoner in each state/jurisdiction
+                      </p>
+                      <a class="btn btn-lg btn-light" style="background-color:white; border-color:black" href="prisonerperstate.html">Prisoner Count</a><br><br>
+                      <p>
+                        This scatter plot is done using plotly and shows the amount of burglary cases per state/jurisdiction
+                      </p>
+                      <a class="btn btn-lg btn-light" style="background-color:white; border-color:black" href="burglaryperstate.html">Burglary</a><br><br>
+                    </div>
+                </div>
+            </div>
+        </section>
+      <!-- Correlation section-->
+      <section id="correlation">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                       <h2>Correlation Plot</h2>
+                      <div class = "container">
+                        <img class = "correlation" src="correlationplot.png" alt=""/>
+                      </div>
+                       
+           <br>           
+                      <p class="lead"><b>A correlation plot helps provide a visualization of the correlation between independent variables in the dataset.</b> Correlation plots have three different types of correlation between variables; positive correlation, negative correlation, and zero correlation. When two variables increase or decrease together, they have a positive correlation, which is represented by a 1. When one variable increases and the other variable decreases, it is a negative correlation, which is represented by a -1. When two variables have no impact on each other, there is zero correlation, which is represented by a 0.<hr> <p class="lead">Collinearity is the correlation between variables that expresses a linear relation in a regression model. Correlation indicates the strength of the linear relationship that might be existing between two variables. High Collinearity among these variables causes over fitting in the model. To avoid this it's suggested to drop such variables.</p>
                     </div>
                 </div>
             </div>
         </section>
         <!-- Machine Learning section-->
-        <section id="machinelearning">
+        <section class="bg-light" id="machinelearning">
             <div class="container px-4">
                 <div class="row gx-4 justify-content-center">
                     <div class="col-lg-8">
-                        <h2>Machine Learning</h2>
-                        <p class="lead">Enter Text</p>
+                 <h2>Machine Learning Models</h2>
+                      <p class= "lead"><b>Preparing the Data</b></p>
+                         <ul>
+                           It was important that the data we would input into the program did not contain any strings. The jurisdiction and includes_jails columns both had strings that had to be changed. We assigned a number from 1 to 50 for each state and changed the values in the jurisdiction column to numbers. The includes_jails columns was change into ones for yes and zeros for no.
+                      </ul>
+                      
+                        <h4>
+                         <p class="lead"><b> 1. Linear Regressor </b> </p> 
+                      </h4>
+                      <ul>Linear regression is one type of regression test <b>used to analyze the direct association between a dependent variable that must be continuous and one or more independent variable(s)</b>. The variable you want to predict is called the dependent variable. The variable you are using to predict the other variable's value is called the independent variable. The formula to find the linear regressor is
+                        <b>
+                          y=mx +b (y = dependent, x = independent, m = estimated slope, b = estimated intercept).
+                        </b>One example of how linear regression could be used in real life is that medical researchers often use linear regression to understand the relationship between drug dosage and the blood pressure of patients. For example, researchers might administer various dosages of a certain drug to patients and observe how their blood pressure responds.   </ul>
+                       <h4>
+                         <p class="lead"> <b> 2. Random Forest Regressor </b></p> 
+                      </h4>
+                      <ul>Random forest is a type of supervised learning algorithm that <b>uses ensemble methods to solve both regression and classification problems</b>. The ensemble learning method is a technique that combines predictions from multiple machine learning algorithms to make a more accurate prediction than a single model. The algorithm operates was by constructing a multitude of decision trees at training time and outputting the mean/mode of prediction of the individual trees.One of the advantages of random forest is that it can perform both regression and classification tasks. It produces good predictions that can be understood easily and handle large datasets efficiently. One of the advantages of random forest is that it can perform both regression and classification tasks. It produces good predictions that can be understood easily and handle large datasets efficiently. One of the advantages of random forest is that it can perform both regression and classification tasks. It produces good predictions that can be understood easily and handle large datasets efficiently. 
+                      </ul>
+                      <h4>
+                         <p class="lead"> <b> 3. Decision Tree Regressor </b> </p> 
+                      </h4>
+                      <ul>
+                      Decision Tree Learning is a <b>supervised learning approach used in statistics, data mining, and machine learning, as it splits the data into partitions or branches, and then continue splitting each partition into smaller groups as the method moves up each branch</b>. Just like the Random forest Regression, the decision tree can also be used for both regression and classification problems. What set the difference is that the random forest algorithm provides a higher level of accuracy in predicting outcomes than the decision tree algorithm, which reduces the overfitting problems in decision trees and also reduces the variance and therefore improves the accuracy. The Decision tree builds regression or classification models in the form of a tree structure. It breaks down a dataset into smaller and smaller subsets while at the same time an associated decision tree is incrementally developed. The final result is a tree with decision nodes and leaf nodes. A decision tree makes decisions by splitting nodes into sub-nodes. This process is performed multiple times during the training process until only homogenous nodes are left. And it is the only reason why a decision tree can perform so well. Therefore, node splitting is a key concept that everyone should know. A significant advantage of a decision tree is that it forces the consideration of all possible outcomes of a decision and traces each path to a conclusion. It creates a comprehensive analysis of the consequences along each branch and identifies decision nodes that need further analysis. It allows an individual or organization to weigh possible actions against one another based on their costs, probabilities, and benefits.
+                    </ul>
+                    
+                    </div>
+                </div>
+            </div>
+        </section>
+      <!-- Evaluation section-->
+        <section id="metrics">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2>Evaluation Metrics</h2>
+                      <p class="lead">In 
+                        <b> Machine Learning,
+                       </b>the evaluation is vital to compare the performance of each and every model. There is a wide selection of metrics to choose from but only a small fraction suits for regression problems such as ours. We used 3 different metrics to rate the model predictions upon how close they are to the real values.</p>
+                        <p class="lead">1. Mean Squared Error</p>
+                      <ul>
+                        We will use the Linear Regression model to understand how our metric works. The model gave us a line (Blue) as output which predicts the results (Green Squares). Because it is very unlikely that the ideal line is found which matches the values perfectly, we have to calculate the deviation by measuring the vertical distance between our real value and the line.<br>
+                        <img class = "other" src = "lreg.png" />
+                      </ul>
+                      
+                      <ul>
+                        MSE is calculated by the sum of square of prediction error which is real output minus predicted output and then divide by the number of data points. It gives you an absolute number on how much your predicted results deviate from the actual number.<br>
+                
+                   <img class = "other" src = "mse.png" />
+                      </ul>
+                        
+                          
+                        
+                        <p class="lead">2. Mean Absolute Error</p>
+                  <ul>
+                    Mean Absolute Error(MAE) is similar to Mean Square Error(MSE). However, instead of the sum of square of error in MSE, MAE is taking the sum of the absolute value of error.
+                     MSE gives larger penalization to big prediction error by square it while MAE treats all errors the same.<br>
+                    <img class = "other" src = "mae.png" />
+                  </ul>
+                      
+                        <p class="lead">3. R² / Adjusted R²</p>
+                      <ul>
+                        R Square is calculated by the sum of squared of prediction error divided by the total sum of the square which replaces the calculated prediction with mean. R Square value is between 0 to 1 and a bigger value indicates a better fit between prediction and actual value. Imagine you draw a horizontal line through all the values such that the total deviation is minimized. Now we compare that sum to the sum of the total distance to our calculated line and subtract the quotient of these two values from 1. If our line predicts the values far better than the hotizontal line the subtractive should be small and our R² value close to 1.
+                     <br><img class = "r2" src = "r.png" />
+                       
+                      </ul>
+                       <p class="lead"> Final Results</p>
+                      <ul>Following shoes the results for the models implemented: <br>
+                        <img class='r2' src = "ss.png" /></ul>
                     </div>
                 </div>
             </div>
@@ -84,7 +204,9 @@ href="#team">Meet the Team</a></li>
                 <div class="row gx-4 justify-content-center">
                     <div class="col-lg-8">
                         <h2>Conclusion</h2>
-                        <p class="lead">Enter text</p>
+                        <p class="lead">
+After completing the data analysis and model evaluation, our team came to the conclusion that the Random Forest model would work best for our dataset. Random Forest gave more accurate results after performing GridSearchCV in comparison to the linear Regression and decision tree models. Compared to the decision tree model, random forest models are a stronger modeling technique and much more robust than a single decision tree, as they can aggregate many decision trees to limit overfitting as well as errors due to bias and therefore yield useful results.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -110,7 +232,7 @@ href="#team">Meet the Team</a></li>
               <!-- Team Member 2 -->
               <div class="col-xl-3 col-md-6 mb-4">
                 <div class="card border-0 shadow">
-                  <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" class="card-img-top" alt="...">
+                  <img src="picoliver.jpeg" class="card-img-top" alt="...">
                   <div class="card-body text-center">
                     <h5 class="card-title mb-0">Oliver</h5>
                     <div class="card-text text-black-50">Front-end Developer</div>
@@ -120,9 +242,9 @@ href="#team">Meet the Team</a></li>
               <!-- Team Member 3 -->
               <div class="col-xl-3 col-md-6 mb-4">
                 <div class="card border-0 shadow">
-                  <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" class="card-img-top" alt="...">
+                  <img src="becky.jpg" class="card-img-top" alt="...">
                   <div class="card-body text-center">
-                    <h5 class="card-title mb-0">Rebecca</h5>
+                    <h5 class="card-title mb-0">Becky</h5>
                     <div class="card-text text-black-50">Exploratory Data Analyst</div>
                   </div>
                 </div>
@@ -133,7 +255,7 @@ href="#team">Meet the Team</a></li>
                   <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" class="card-img-top" alt="...">
                   <div class="card-body text-center">
                     <h5 class="card-title mb-0">Weidi</h5>
-                    <div class="card-text text-black-50">Data Analyst, Backend Developer</div>
+                    <div class="card-text text-black-50">Data Analyst, Back-end Developer</div>
                   </div>
                 </div>
               </div>
@@ -150,7 +272,7 @@ href="#team">Meet the Team</a></li>
              <!-- Team Member 6 -->
               <div class="col-xl-3 col-md-6 mb-4">
                 <div class="card border-0 shadow">
-                  <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" class="card-img-top" alt="...">
+                  <img src="https://i.redd.it/f454de7jjeh81.png" class="card-img-top" alt="...">
                   <div class="card-body text-center">
                     <h5 class="card-title mb-0">Kris</h5>
                     <div class="card-text text-black-50">Machine Learning Engineer</div>
