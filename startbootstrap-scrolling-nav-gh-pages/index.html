@@ -27,7 +27,7 @@
 }
     .bg-image {
   /* The image used */
-  background-image: url("background.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("background.jpg");
 
   /* Add the blur effect */
    filter: blur(2px);
@@ -41,21 +41,11 @@
   background-repeat: no-repeat;
   background-size: cover;
 }      
-    .bg-text {
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-  color: white;
-  font-weight: bold;
-  font-family: Times, Helvetica;
-  border: 3px solid #f1f1f1;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  width: 80%;
-  padding: 20px;
-  text-align: center;
+    #ip1 {
+    border-radius: 18px;
+    padding: 20px; 
+    width: 200px;
+    height: 15px;    
 }
       </style>
 
@@ -76,6 +66,7 @@
                       <li class="nav-item"><a class="nav-link" href="#conclusion">Conclusion</a></li>
                       <li class="nav-item"><a class="nav-link" 
 href="#team">Meet the Team</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#predict">Prediction</a></li>
                     </ul>
                 </div>
             </div>
@@ -147,7 +138,7 @@ href="#team">Meet the Team</a></li>
                       <p><p class="lead">
                          The following bar plot is done using plotly and shows different crimes in each state/jurisdiction and whether it includes jail or not
                       </p>
-                      <a class="btn btn-lg btn-light bg-gradient" style="background-color:lightskyblue; border-color:deepskyblue" href="includes_jails.html">Includes Jail or not</a><br><br>
+                      <a class="btn btn-lg btn-light" style="background-color:lightskyblue; border-color:deepskyblue" href="includes_jails.html">Includes Jail or not</a><br><br>
                       <p><p class="lead">
                         The following bar plot is done using plotly and shows the amount of murder-manslaughter cases per state/jurisdiction
                       </p>
@@ -160,6 +151,10 @@ href="#team">Meet the Team</a></li>
                         The following scatter plot is done using plotly and shows the amount of burglary cases per state/jurisdiction
                       </p>
                       <a class="btn btn-lg btn-light" style="background-color:lightskyblue; border-color:deepskyblue" href="burglaryperstate.html">Burglary</a><br><br>
+                      <p><p class="lead">
+                        The following scatter plot is done using plotly and shows the amount of crimes per state based on population
+                      </p>
+                      <a class="btn btn-lg btn-light" style="background-color:lightskyblue; border-color:deepskyblue" href="violentcperstate.html">Crimes per State</a><br><br>
                     </div>
                 </div>
             </div>
@@ -260,8 +255,9 @@ href="#team">Meet the Team</a></li>
                 </div>
             </div>
         </section>
+        
         <!-- Conclusion section-->
-        <section class="bg-light" id="conclusion">
+        <section id="conclusion">
             <div class="container px-4">
                 <div class="row gx-4 justify-content-center">
                     <div class="col-lg-8">
@@ -272,6 +268,29 @@ After completing the data analysis and model evaluation, our team came to the co
                     </div>
                 </div>
             </div>
+        </section>
+        <!-- Prediction -->
+        <section class="bg-light" id = "predict">
+           <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                      <h2>Make a Prediction</h2>
+                      <form action="" method="post">
+                      <input type="text" id="ip1" placeholder="Jail Situation"/>
+                      <input type="text" id="ip1" placeholder="State Population"/>
+                      <input type="text" id="ip1" placeholder="Murder-Manslaughter"/>
+                      <input type="text" id="ip1" placeholder="Burglary"/>
+                      <input type="text" id="ip1" placeholder="Aggravated Assault"/>
+                      <input type="text" id="ip1" placeholder="Rape"/>
+                      <input type="text" id="ip1" placeholder="Property Theft"/>
+                      <input type="text" id="ip1" placeholder="Total Crime"/>
+                      <input type="text" id="ip1" placeholder="Rape"/>
+                      <br><br>
+                        <center><button type = "submit" class="btn btn-lg btn-blue" style="background-color:lightskyblue; border-color:deepskyblue">Predict Prisoner Count</button></center>
+                      </form>
+                  </div>
+             </div>
+          </div>
         </section>
         <!-- Team section-->
         <section id="team">
