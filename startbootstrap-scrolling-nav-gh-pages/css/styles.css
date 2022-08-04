@@ -7805,6 +7805,12 @@ textarea.form-control-lg {
   --bs-text-opacity: 1;
 }
 
+.back-img{
+    background-image: url("cs.jpeg");
+    background-repeat: no-repeat;
+    width: 600px;
+    height: 200px;
+}
 .bg-primary {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
